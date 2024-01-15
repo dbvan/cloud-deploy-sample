@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-demo
+    app.kubernetes.io/managed-by: google-cloud-deploy
+    deploy.cloud.google.com/delivery-pipeline-id: git-pipeline
+    deploy.cloud.google.com/location: asia-southeast1
+    deploy.cloud.google.com/project-id: pro-sale-322802
+    deploy.cloud.google.com/release-id: release-005
+    deploy.cloud.google.com/target-id: git-prod
+  name: nginx-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-demo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nginx-demo
+        app.kubernetes.io/managed-by: google-cloud-deploy
+        deploy.cloud.google.com/delivery-pipeline-id: git-pipeline
+        deploy.cloud.google.com/location: asia-southeast1
+        deploy.cloud.google.com/project-id: pro-sale-322802
+        deploy.cloud.google.com/release-id: release-005
+        deploy.cloud.google.com/target-id: git-prod
+    spec:
+      containers:
+        - image: nginx:1.14.2
+          name: nginx
+          resources: {}
