@@ -6,7 +6,7 @@ metadata:
   name: nginx-demo
   namespace: default
 spec:
-  replicas: 1
+  replicas: 1 # from-param: ${replicas}
   selector:
     matchLabels:
       app: nginx-demo
