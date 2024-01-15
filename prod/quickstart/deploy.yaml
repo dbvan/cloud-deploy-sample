@@ -17,6 +17,6 @@ spec:
         app: nginx-demo
     spec:
       containers:
-      - image: nginx:1.14.2 # from-param: {$nginx_image}
+      - image: nginx:1.14.2 # from-param: ${nginx_image}
         name: nginx
         resources: {}
